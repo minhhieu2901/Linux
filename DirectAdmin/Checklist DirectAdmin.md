@@ -8,16 +8,15 @@
 5. Tạo email cho các khg theo tên miền.
 6. Gửi email khi tạo gói cho KHG hoặc thay đổi các thông tin của client
 7. Backup / restore code, db trên chính máy DA
-8. Backup / restore code, db trên 2 máy DA khác nhau
-9. Cấu hình SSL Let's encrypt
-10. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
-11. Xác định file log của DA.
-12. Đặt lịch backup code + DB định kỳ
-13. KIểm tra log http, ram, cpu
-14. Change IP của các máy DA khi đổi máy chủ
-15. Add thêm IP cho các domain chạy các IP khác nhau
-16. Cấu hình chuyển các mode httpd
-17. Cài đặt và sử dụng CSF
+8. Cấu hình SSL Let's encrypt
+9. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
+10. Xác định file log của DA.
+11. Đặt lịch backup code + DB định kỳ
+12. KIểm tra log http, ram, cpu
+13. Change IP của các máy DA khi đổi máy chủ
+14. Add thêm IP cho các domain chạy các IP khác nhau
+15. Cấu hình chuyển các mode httpd
+16. Cài đặt và sử dụng CSF
 
 ## Thực Hiện
 
@@ -170,3 +169,64 @@
         - có thể restore từ file backups trong máy hoặc up file từ thiết bị khác
 
 <img src=https://image.prntscr.com/image/iV1dn1JjR_2A8B3mRldJPQ.png>
+
+
+### 8. Cấu hình SSL Let's encrypt
+
+- Đăng nhập DA bằng tài khoản user kéo xuống phần `advanced features` chọn `SSL Certificates`
+
+<img src=https://image.prntscr.com/image/a7LYVdE_QmuhZ6D9R_acjw.png>
+
+- Tích chọn ô 1 và 2 như ảnh dưới đây. Mục 3 điền email của quý khách vào . Key Size (bits), Certificate Type chọn như hình dưới đây. Sau đó kéo chuột xuống dưới và click “save” Chú ý: SSL is currently enabled for this domain.
+<img src= https://image.prntscr.com/image/zvxOjIxjTrOuPHmCTLtq5g.png>
+
+- Sau khi cài đặt hệ thống sẽ sinh ra keyl, tiếp tục điều hường ssl sang https và chứng thực chứng chỉ với tổ chức phát hành
+
+<img src= https://image.prntscr.com/image/RZrt0PJOQuurTtxbx_onpA.png>
+
+- Sau khi cài đạt kiểm tra chwusng chỉ SSL:
+
+<img src=https://image.prntscr.com/image/1XHfveLhQR6t_6R2QpzVYg.png>
+
+9. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
+- Đăng nhập hệ thống với tài khoản `Admin` vào phần `CustomBuild 2.0`
+
+<img src=https://image.prntscr.com/image/kIzWC9SUS82beUDlZUqdLA.png>
+
+- Chọn `Edit Opition` chọn các phiên bản muốn cài đặt và lưu lại
+
+<img src=https://image.prntscr.com/image/fCKFcW0RSf2TjvTiRGwspA.png>
+
+<img src=https://image.prntscr.com/image/UoB2ikj9TzGASCxoK916yQ.png>
+
+### 10. Xác định file log của DA
+
+- Sau khi bạn đăng nhập vô tài khoản DirectA dmin bằng quyền user, xong rồi các bạn vô trong mục `site summary / statistics / logs` như hình bên dưới
+
+<img src="https://image.prntscr.com/image/h5ngGnRxRimVTwjg85FHuA.png">
+
+- Bạn có thể xem log ở nhiều dạng khác nhau: xem toàn bộ log, xem 100 dòng đầu tiên hoặc 10 dòng đầu tiên
+
+<img src=https://image.prntscr.com/image/hCxXBFykTuqMliUiElO6cg.png>
+
+- Đoạn log cơ bản và phân tích
+
+<img src=https://image.prntscr.com/image/pocUpZnpScCgQKr-bpc7Xg.png>
+
+- Thường thì bạn nên lưu file log đó thành file text sau đó mình sẽ phân tích cho dễ, trên đó mình sẽ nhìn thấy trực quan hơn. Những thông tin quan trọng thường bạn hay quan tâm đó:
+    - ip: những ip nào thường xuyên truy cập, đối với ddos thì điều này rất quan trọng. -thời gian: thời gian cho chúng ta biết đối tượng phá hoại hành động vào lúc nào, từ đó mình sẽ dễ theo dõi và xác định đối tượng dùng tool hay dùng tay.
+    - đường dẫn: đây là một thông tin khá quan trọng, nhất là đối với lỗ hổng website, giúp bạn biết được đối tượng đánh vào vị trí nào, file nào.
+    - thông tin trình duyệt cũng là một yếu tố cũng rất có lợi cho bạn, bạn có thể ngăn chặn ddos, thường thì đối tượng nếu dùng tool đời cũ sẽ có lỗ hổng về chỗ này, các trình duyệt nó thống nhất với nhau, bạn có thể dễ dàng chặn được.
+
+### 11. Đặt lịch backup code và DB định kì 
+
+- Để đặt lịch Backup cho DA bạn đăng nhập hệ thống bàng tài khoản `Admin`.
+
+<img src=https://image.prntscr.com/image/JDNGGQgdTWmnmtj9iFrkSg.png>
+
+<img src=https://image.prntscr.com/image/rnrQjt_eSUOEsAI4ddE8RQ.png>
+
+### 12. KIểm tra log http, ram, cpu
+
+
+
