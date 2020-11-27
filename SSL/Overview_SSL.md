@@ -139,7 +139,7 @@
         - Trustwave
         
         - SSLs
-### 5.Một số loại chứng chỉ SSL miễn phí.
+### 4.Một số loại chứng chỉ SSL miễn phí.
 
 ### Let's Encrypt
 
