@@ -50,7 +50,7 @@
 
     <VirtualHost *:443>
         ServerAdmin hieunm@nhanhoa.com.vn
-        ServerName congphan.xyz
+        ServerName hieunm29198.xyz
         ServerAlias www.hieunm29198.xyz
 
         DocumentRoot /var/www/html
