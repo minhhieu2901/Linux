@@ -188,7 +188,7 @@
 
 <img src=https://image.prntscr.com/image/1XHfveLhQR6t_6R2QpzVYg.png>
 
-9. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
+### 9. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
 - Đăng nhập hệ thống với tài khoản `Admin` vào phần `CustomBuild 2.0`
 
 <img src=https://image.prntscr.com/image/kIzWC9SUS82beUDlZUqdLA.png>
@@ -226,7 +226,13 @@
 
 <img src=https://image.prntscr.com/image/rnrQjt_eSUOEsAI4ddE8RQ.png>
 
-### 12. KIểm tra log http, ram, cpu
 
+### 14. Cấu hình chuyển các mode httpd
 
+- Sử dụng tính năng custombuild 2.0 để chuyển đổi các chế đội httpd
 
+<img src=https://image.prntscr.com/image/-Sgk0Au4QwSdQkg0FHdRiw.png>
+
+Kéo xuống phần `WEB Server Settings` chọn `Apache_mpm` và chọn chế độ httpd mong muốn
+
+<img src=https://image.prntscr.com/image/aaTXMyIRQ5yAJsNLWX9JMA.png>
