@@ -22,7 +22,9 @@
 <img src= https://image.prntscr.com/image/uEXl7vESTNStEc4LMzofXg.png>
 
 - SMTP sử dụng ports:
+
 Port 25 – port không mã hóa
+
 Port 465 – SSL/TLS port, cũng có thể được gọi là SMTPS
 
 ### Incoming Mail Server là gì?
@@ -35,8 +37,10 @@ Port 465 – SSL/TLS port, cũng có thể được gọi là SMTPS
 
 - Thông  thường, email client sẽ có tùy chọn bạn có muốn giữ mail trên server sau khi tải về hay không. Nếu bạn đang truy cập một tài khoản bằng nhiều thiết, chúng tôi khuyên là nên chọn giữ lại bản copy trên server nếu không thiết bị thứ 2 sẽ không thể tải mail về được vì nó đã bị xóa sau khi tải về trên thiết bị 1.
 - Cũng đáng để lưu ý là POP3 là giao thức 1 chiều, có nghĩa là email được “kéo” từ email server từ xa xuống email client.
- - Mặc đình, port POP3 là:
+- Mặc đình, port POP3 là:
+
 Port 110 – port không mã hóa
+
 Port 995 – SSL/TLS port, cũng có thể được gọi là POP3S
 
      - IMAP là viết tắt của Internet Message Access Protocol, là giao thức chuẩn Internet được sử dụng bởi các ứng dụng email để truy xuất thư email từ máy chủ thư qua kết nối TCP/IP.
@@ -50,6 +54,7 @@ Sau này, giao thức này trở nên phổ biến nhờ nhà cung cấp mail l�
 - Port IMAP mặc định:
 
 Port 143 – port không mã hóa
+
 Port 993 – SSL/TLS port, cũng có thể được gọi là IMAPS
 
 
