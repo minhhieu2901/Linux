@@ -43,9 +43,9 @@ Port 110 – port không mã hóa
 
 Port 995 – SSL/TLS port, cũng có thể được gọi là POP3S
 
-     - IMAP là viết tắt của Internet Message Access Protocol, là giao thức chuẩn Internet được sử dụng bởi các ứng dụng email để truy xuất thư email từ máy chủ thư qua kết nối TCP/IP.
+- IMAP là viết tắt của Internet Message Access Protocol, là giao thức chuẩn Internet được sử dụng bởi các ứng dụng email để truy xuất thư email từ máy chủ thư qua kết nối TCP/IP.
 
-     Giống như POP3, IMAP cũng  được dùng để kéo email về emails client, tuy nhiên khác biệt với POP3 là nó chỉ kéo email headers về, nội dung email vẫn còn trên server. Đây là kênh liên lạc 2 chiều, thay đổi trên mail client sẽ được chuyển lên server.
+Giống như POP3, IMAP cũng  được dùng để kéo email về emails client, tuy nhiên khác biệt với POP3 là nó chỉ kéo email headers về, nội dung email vẫn còn trên server. Đây là kênh liên lạc 2 chiều, thay đổi trên mail client sẽ được chuyển lên server.
 
 <img src= https://image.prntscr.com/image/AzUhYkduRaWg1xyGyMf1gw.png>
 
