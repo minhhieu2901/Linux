@@ -53,12 +53,15 @@
 - `rm -r <ten_thu_muc>` : xóa thư mục chứa các thư mục con và tập tin có xác nhận từng đối tượng.
 
 ## 6. Các option dùng với lệnh tar
-c : tạo file nén .tar.
-x : bung file nén .tar.
-v : show quá trình nén hoặc giải nén dữ liệu ra màn hình.
-f : chỉ định nén thành file.
-t : Xem dữ liệu trong file nén.
-j : tạo file nén với bzip2 có định dạng file.tar.bz2
-z : tạo file nén với gzip có định dạng file.tar.gz.
-r : thêm một file và thư mục vào file nén đã tồn tại.
---wildcards : tìm và xuất file bất kỳ trong file nén.
+- c : tạo file nén .tar.
+
+- x : bung file nén .tar.
+
+- v : show quá trình nén hoặc giải nén dữ liệu ra màn hình.
+
+- f : chỉ định nén thành file.
+- t : Xem dữ liệu trong file nén.
+- j : tạo file nén với bzip2 có định dạng file.tar.bz2
+- z : tạo file nén với gzip có định dạng file.tar.gz.
+- r : thêm một file và thư mục vào file nén đã tồn tại.
+- --wildcards : tìm và xuất file bất kỳ trong file nén.
