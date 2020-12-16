@@ -65,3 +65,44 @@
 - z : tạo file nén với gzip có định dạng file.tar.gz.
 - r : thêm một file và thư mục vào file nén đã tồn tại.
 - --wildcards : tìm và xuất file bất kỳ trong file nén.
+
+## 7. lệnh cp
+
+`cp`:  lệnh copy file với 1 đối tượng nguồn và đích
+
+`cp -r`: Để sao chép các thư mục hoàn chỉnh, hãy sử dụng cp -r (tùy chọn -r buộc sao chép đệ quy tất cả các tệp trong tất cả các thư mục con)
+
+`cp -i`: Để ngăn cp ghi đè lên các tệp hiện có, hãy sử dụng tùy chọn -i (để tương tác).
+
+`cp -f` : copy file ghi đè lên file đang tồn tại ở thư mục đích nếu nó cùng tên file nguồn copy.
+
+`cp -n`: Copy không cho ghi đè file đang có.
+
+## 8. Lệnh mv
+
+`mv`: lệnh đổi tên tệp
+
+`mv -i` : Nhắc nhở nếu ghi đè
+
+`mv -f`: Không nhắc nhở nếu có trường hợp ghi đè
+
+## 9. lệnh head
+
+`head -n`: số dòng đầu tiên muốn in ra
+
+`head -c`: hiện thị số byte bạn muốn hiện thị ở đầu ra
+
+`head -v`: hiển thị các dòng từ nhiều file luôn đứng trước header filename.
+
+`head -q`: hiển thị các dòng từ nhiều file mà không có header filename đứng trước.
+
+## 10. lệnh tail
+
+`tail -n`: In số dòng n cuối cùng của mỗi tệp
+
+`tail -c`: In số byte n đầu cuối cùng mỗi tệp
+
+`tail -q`: Không in tiêu đề đầu ra
+
+`tail -f`: Tiếp tục đọc tập tin cho đến khi CTRL + C
+
