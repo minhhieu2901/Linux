@@ -20,6 +20,11 @@ Sau đó chọn.
 
 <img src= https://image.prntscr.com/image/5TKLkKRqREWjhaUeTJslzA.png>
 
+- Test gửi có chữ ký.
+
+<img src= https://image.prntscr.com/image/Wz0XtZqhSa6d33gVXVFEYQ.png>
+
+
 ## 3. Tạo giới hạn gửi cho mail.
 
 - Chọn User và bấm chuôt phải vào user bấm Edit
@@ -40,6 +45,13 @@ Sau đó chọn.
 
 <img src=https://image.prntscr.com/image/LRxdA7uuQb_Gy55e96ecAg.png>
 
+- Điền email forward để kiểm tra:
+
+<img src= https://image.prntscr.com/image/gK3aoKUPSYGYnsx56IMOPw.png>
+
+<img src= https://image.prntscr.com/image/Tf3LueKJRVWwF4WG80EvQQ.png>
+
+Email forward đã nhận được thư từ phía người gửi.
 
 
 
