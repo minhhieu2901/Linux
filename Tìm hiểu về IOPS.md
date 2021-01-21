@@ -2,12 +2,13 @@
 
 ## 1. IOPS là gì?
 
-- IOPS được viết tắt bởi cụm từ Input – output operation per second được hiểu nôm na là 1 truy cập đọc và viết với mỗi giây. Đối với các thiết bị lưu trữ file thì băng thông chính là thông số quan trọng nhất. Còn các thiết bị cho đám mây Cloud thì IOPS quyết định độ nhạy và nhanh của máy ảo.
+- IOPS - Input/Output operation per Second là đơn vị đo lường được sử dụng cho các thiết bị lưu trữ như HDD, SSD hoặc SAN – cho biết số lượng tác vụ Write hoặc Read được hoàn thành trong 1 giây. Số IOPS được publish bởi các nhà sản xuất thiết bị, và không liên quan gì đến các ứng dụng đo lường hiệu năng cả.
 
-- Thông số IOPS càng cao thì tốc độ xử lý sẽ càng nhanh, số tác vụ được xử lý đồng thời cũng sẽ nhiều hơn. Và tất nhiên dẫn đến hiệu năng xử lý của các ứng dụng càng cao. Nhưng cũng có trường hợp khi IOPS quá cao, đến giới hạn vật lý sẽ gây ra tình trạng thắt cổ chai (IOPS quá cao –> độ trễ cao –> làm giảm hiêu năng).
+- Đối với Cloud server, thông số IOPS càng cao thì tốc độ xử lý càng nhanh, số tác vụ được xử lý sẽ nhiều hơn, và tất nhiên, hiệu năng của ứng dụng trên Cloud Server sẽ cao hơn. Tuy nhiên, có trường hợp IOPS quá cao đến giới hạn vật lý sẽ gây ra tình trạng thắt cổ chai (IOPS quá cao –> độ trễ cao –> làm giảm hiêu năng).
 
 - Đối với IOPS, thứ quan trọng nhất ta cần chú ý đến là tỉ lệ Read và Write (thông thường tỉ lệ này 70% (Read) và 30%(Write) – có thể tuỳ chỉnh được).
 
+- Thông số 
 VD:
 - Hệ thống lưu trữ sử dụng ổ SAS 15k
 - Dung lượng mỗi ổ là 900Gb.
@@ -35,14 +36,18 @@ IOPS thực = (Tổng IOPS * Write%)/(Raid Penalty) + (Tổng IOPS * Read %)
 
 Số ổ cứng = ((Read IOPS) + (Write IOPS*Raid Penalty))/ IOPS per Disk
 ```
-__Bảng IOPS tương ứng với từng loại ổ cứng__
+__Bảng IOPS tương ứng với từng loại Raid__
 
 <img src=https://image.prntscr.com/image/bgWhvHr5QVi67IvLLDWa3A.png>
+
+__Bảng IOPS tương ứng với từng loại ổ cứng__
+
+<img src= https://image.prntscr.com/image/seW6FUJfTZCA2RHMcbHnuQ.png>
 
 
 ## 2. Các thông số khi test Disk
 
-- Tốc độ đạt yêu cầu của 1 ổ cứng SSD là trên 200MB/s là đạt yêu cầu sử dụng. Còn dưới 200MB/s thì sẽ bị coi như không đạt yêu cầu và loại bỏ.
+- Tốc độ đạt yêu cầu của 1 ổ cứng SSD là trên 200MB/s là đạt yêu cầu sử dụng. Còn dưới 200MB/s thì sẽ bị coi như không đạt yêu cầu và loại bỏ. Thông thường test đạt thông tầm 240MB/s.
 
 - Tốc độ đạt yêu cầu của 1 ổ cứng HDD là trên 100MB/s.
 
@@ -61,9 +66,12 @@ __Các thông số__
 - Seq. Read Speed: Tốc độ đọc tuần tự của ổ đĩa là 261 MB/s
 
 - Random QD32: 
-    - Của tốc độ ghi là: IOPS 9314.8, thời gian khởi động là 0.11ms
+    - số lần ghi ngẫu nhiên là: IOPS 9314.8, độ trễ là 0.11ms
 
-    - Của tốc độ đọc là: IOPS 6417.3, thời gian khởi động là 0.16ms
+    - số lần đọc ngẫu nhiên là: IOPS 6417.3, độ trễ là 0.16ms
 
-
+- Test tốc độ bằng lệnh: Thông thường, chúng ta thực hiện việc test thông qua lệnh `dd`, ghi một file dữ liệu xuống ổ cứng. Lệnh này rất phổ biến vì được cài đặt mặc định trên hầu hết các phiên bản OS của Linux và hiển thị thông tin trực quan, dễ hiểu.
+```
+dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync
+```
 
