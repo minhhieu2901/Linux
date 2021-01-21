@@ -75,3 +75,7 @@ __Các thông số__
 dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync
 ```
 
+## 3. Tài liệu tham khảo
+
+https://www.viettelidc.com.vn/tin-tuc/tim-hieu-ve-cac-thong-so-iops-latency-va-throughput
+
