@@ -1,0 +1,28 @@
+# Linux virtual networking 
+
+## 1. Linux virtual networking có thể dễ dàng tạo thành từ libvirt và linux virtual bridge
+
+- Cài đặt và bắt đầu kích hoạt libvirt:
+    ```
+    #Yum install libvirt
+    #systemctl start libvirtd
+    #systemctl enable libvirtd
+    ```
+- Libvirt hỗ trợ các loại mạng ảo sau:
+    - Network address translation mode( chế độ dịch địa chỉ mạng - NAT)
+    - Routed mode(chế độ định tuyến)
+    - Isolated mode (chế độ cô lập)
+    - Bridged mode (chế độ bridge)
+## 2. Virtual networking trong NAT mode
+
+- Khi trình nền libvirt được cài đặt lần đầu tiên trên máy chủ, nó đi kèm với cấu hình chuyển đổi mạng ảo mặc định ban đầu. Switch ảo mặc định ở chế độ NAT và được sử dụng bởi các máy ảo (VM - Virtual Machine) để liên lạc với mạng bên ngoài thông qua máy chủ vật lý.
+- Cấu hình được lưu trữ trong file XML: `/etc/libvirt/qemu/networks/default.xml`
+- Giao diện virbr0 cũng tạo trên máy chủ.
+<p align=center><img src=https://image.prntscr.com/image/br-SA6eYQLCmr4INP-STuQ.png></p>
+
+- Lệnh `virsh` dùng để cấu hình và kiểm tra mạng ảo
+<p align=center><img src=https://image.prntscr.com/image/iU6DfHiqR8SOrWjX6MOBLQ.png></p>
+
+- Khi libvirt đang chạy mặc định, ta sẽ thấy 1 bridge bị cô lập. Bridge này không có bất kỳ interface vật lý nào thêm vào, vì nó sử dụng NAT để kết nối ra mạng ngoài. Đừng thêm interface vào bridge này.
+
+<p align=center><img src=https://image.prntscr.com/image/8qtSOOVNT3mW_-HC0ea1Ow.png></p>
